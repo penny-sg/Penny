@@ -1,0 +1,2 @@
+# Penny
+Static website generator.
