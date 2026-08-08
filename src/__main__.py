@@ -1,7 +1,6 @@
 import sys
 
 from typing import Final
-from bs4 import BeautifulSoup
 
 USAGE: Final = "Usage: python3 penny.pyz <directory>; directory must contain index.html and index.py"
 
