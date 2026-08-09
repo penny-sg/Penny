@@ -1,4 +1,5 @@
 import sys
+import penny
 
 from typing import Final
 
@@ -9,3 +10,9 @@ if __name__ == "__main__":
     if len(args) < 2:
         print(USAGE)
         sys.exit(1)
+    project_dir = args[1]
+    with open(project_dir + 'index.html', 'r') as f_i:
+        index = f_i.read()
+    with open(project_dir + 'index.py', 'r') as f_s:
+        script = f_s.read()
+    print(penny.exec_files(index, script))
