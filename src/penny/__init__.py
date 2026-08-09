@@ -2,7 +2,7 @@ import re
 
 from bs4 import BeautifulSoup
 
-def exec_files(in_file: str, script_file: str):
+def exec_files(in_file: str, script_file: str) -> str:
     script_ns = {}
     exec(script_file, script_ns)
     
@@ -15,3 +15,4 @@ def exec_files(in_file: str, script_file: str):
             tag.replace_with(func())
         else:
             tag.extract()
+    return str(soup)
