@@ -12,7 +12,7 @@ def exec_files(in_file: str, script_file: str) -> str:
         fun_name = tag.name[4:].replace('-', '_')
         func = script_ns.get(fun_name)
         if callable(func):
-            tag.replace_with(func(tag.attrs))
+            tag.replace_with(func(**tag.attrs))
         else:
             tag.extract()
     return str(soup)
